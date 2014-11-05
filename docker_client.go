@@ -197,6 +197,9 @@ func getContainers(client *docker.Client) ([]*RuntimeContainer, error) {
 		return nil, err
 	}
 
+	fmt.Print("Num Containers: ")
+    fmt.Println(apiContainers.Size)
+
 	containers := []*RuntimeContainer{}
 	for _, apiContainer := range apiContainers {
 		container, err := client.InspectContainer(apiContainer.ID)
