@@ -75,6 +75,7 @@ func generateFile(config Config, containers Context) bool {
 			if len(container.PublishedAddresses()) > 0 {
 				filteredContainers = append(filteredContainers, container)
 			}
+			log.Printf("Name: %s", container.Name)
 		}
 	} else if config.OnlyExposed {
 		for _, container := range containers {
